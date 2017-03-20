@@ -1,0 +1,96 @@
+/* Raleway: 400 Regular, 500 Medium, 600 Semi-Bold, 700 Bold (Font-weight) */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700');
+
+html
+{
+font-family: Raleway;
+}
+.stfk_cardTitle
+{
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.stfk_title
+{
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.stfk_heading
+{
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.stfk_subheading
+{
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #95989A;
+}
+
+.stfk_typeButton
+{
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #395b7f;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.stfk_body2
+{
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #000;
+}
+
+.stfk_body1
+{
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #000;
+}
+
+.stfk_caption
+{
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #757575;
+}
+
+.stfk_overheading
+{
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 8px;
+}
+
+@media screen and (max-width: 650px)
+{
+  .stfk_overheading
+  {
+    letter-spacing: 1px;
+  }
+
+}
