@@ -30,15 +30,25 @@ class ClientsController extends AppController
 	{
 		$t = $this->request->data['started'];
 		$eventStart = new Time(vsprintf('%s-%s-%s %s:%s', $t));
+
+		// Pick clients
 		$clients = $this->Clients->find()->applyOptions(['contain' => 'ClientMetadatas'])->leftJoinWith('ClientMetadatas')->where(['Clients.anonymous' => 0, 'Clients.created >' => $eventStart]);
 		$clientsA = $clients->toArray();
 		$clientsF = $clients->where(['ClientMetadatas.name' => 'gender', 'ClientMetadatas.value' => 'F'])->toArray();
 		$clients = $this->Clients->find()->applyOptions(['contain' => 'ClientMetadatas'])->leftJoinWith('ClientMetadatas')->where(['Clients.anonymous' => 0, 'Clients.created >' => $eventStart]);
 		$clientsM = $clients->where(['ClientMetadatas.name' => 'gender', 'ClientMetadatas.value' => 'M'])->toArray();
-		$winners = ['all' => $clientsA, 'male' => $clientsM, 'female' => $clientsF];
+
+
+		$winners = ['Tous - Toile de Marie-Chloé Duval' => $clientsA, 'Homme - Maison Simons' => $clientsM, 'Femme - Lilianne' => $clientsF, 'Femme - Panier cadeau' => $clientsF, 'Femme - Cravate Melodie Ties' => $clientsF];
+
+		$wEmail = [];
+
 		foreach ($winners as $key => $winner) {
+			do {
 			$r = rand(0, sizeof($winner)-1);
 			$w = $winner[$r];
+			} while (in_array($w['email'], $wEmail));
+			$wEmail[] = $w['email'];
 			foreach($w['client_metadatas'] as $meta) {
 				if ($meta['name'] == 'phone')
 					$w['phone'] = $meta['value'];

@@ -1,4 +1,4 @@
-<div>
+<div style="width:500px;">
 <span class="stfk_title">And the winners are...</span>
 <?php foreach($winners as $key => $winner): ?>
 <div>
